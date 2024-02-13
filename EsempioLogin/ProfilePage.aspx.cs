@@ -18,7 +18,7 @@ namespace EsempioLogin
             }
             if (Request.Cookies["login"] != null)
             {
-                showUsername.Text = Request.Cookies["login"]["username"];
+                showUsername.Text = $"Benvenuto {Request.Cookies["login"]["username"]}!";
             }
         }
 
@@ -26,9 +26,7 @@ namespace EsempioLogin
         {
             if (Request.Cookies["login"] != null)
             {
-                HttpCookie myCookie = new HttpCookie("login");
-                myCookie.Expires = DateTime.Now.AddDays(-1);
-                Response.Cookies.Add(myCookie);
+                Response.Cookies["login"].Expires = DateTime.Now.AddDays(-1);
                 Response.Redirect("Login.aspx");
             }
         }

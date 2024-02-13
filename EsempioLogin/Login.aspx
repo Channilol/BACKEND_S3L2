@@ -13,7 +13,7 @@
         <br />
         <asp:TextBox ID="usernameLogin" runat="server" placeholder="Scrivi il tuo username"></asp:TextBox>
         <br />
-        <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
+        <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click"/>
     </form>
 </body>
 </html>

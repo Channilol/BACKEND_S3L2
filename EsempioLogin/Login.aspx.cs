@@ -20,10 +20,18 @@ namespace EsempioLogin
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            HttpCookie myCookie = new HttpCookie("login");
-            myCookie.Values["username"] = usernameLogin.Text;
-            Response.Cookies.Add(myCookie);
-            Response.Redirect("ProfilePage.aspx");
+            if (usernameLogin.Text != "")
+            {
+                lblUsername.Text = "";
+                HttpCookie myCookie = new HttpCookie("login");
+                myCookie.Values["username"] = usernameLogin.Text;
+                Response.Cookies.Add(myCookie);
+                Response.Redirect("ProfilePage.aspx");
+            }   
+            else
+            {
+                lblUsername.Text = "Devi scrivere un username per continuare!";
+            }
         }
     }
 }
