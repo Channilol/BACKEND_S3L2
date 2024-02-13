@@ -16,7 +16,7 @@ namespace EsempioLogin
                logout.Visible = false;
                Response.Redirect("Login.aspx");
             }
-            if (Request.Cookies["login"] != null)
+            else
             {
                 showUsername.Text = $"Benvenuto {Request.Cookies["login"]["username"]}!";
             }
